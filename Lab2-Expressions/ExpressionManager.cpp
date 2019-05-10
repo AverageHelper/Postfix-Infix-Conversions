@@ -8,9 +8,15 @@ ExpressionManager::ExpressionManager() {
 
 /// Returns `true` if `character` is one of {,(, or [.
 bool isOpenParen(const char character) {
-    return (character == '{' ||
-            character == '(' ||
-            character == '[');
+    switch (character) {
+        case '{':
+        case '(':
+        case '[':
+            return true;
+            
+        default:
+            return false;
+    }
 }
 
 bool isOpenParen(const string str) {
@@ -20,9 +26,15 @@ bool isOpenParen(const string str) {
 
 /// Returns `true` if `character` is one of },), or ].
 bool isCloseParen(const char character) {
-    return (character == '}' ||
-            character == ')' ||
-            character == ']');
+    switch (character) {
+        case '}':
+        case ')':
+        case ']':
+            return true;
+            
+        default:
+            return false;
+    }
 }
 
 bool isCloseParen(const string str) {
@@ -58,11 +70,17 @@ bool isPair(const string open, const string close) {
 
 /// Returns `true` if `character` is one of +, -, *, /, or %.
 bool isOperator(const char character) {
-    return (character == '+' ||
-            character == '-' ||
-            character == '*' ||
-            character == '/' ||
-            character == '%');
+    switch (character) {
+        case '+':
+        case '-':
+        case '*':
+        case '/':
+        case '%':
+            return true;
+            
+        default:
+            return false;
+    }
 }
 
 bool isOperator(const string str) {
